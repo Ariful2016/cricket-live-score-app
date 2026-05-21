@@ -1,0 +1,39 @@
+{
+  "rules": {
+    "matches": {
+      ".read": true,
+      ".write": true,
+      "$matchId": {
+        ".validate": "newData.hasChildren(['id', 'matchName', 'matchType', 'totalOvers', 'teamA', 'teamB', 'groundName', 'matchDate'])"
+      }
+    },
+    "teams": {
+      ".read": true,
+      ".write": true,
+      "$teamId": {
+        ".validate": "newData.hasChildren(['id', 'name', 'shortName'])"
+      }
+    },
+    "players": {
+      ".read": true,
+      ".write": true,
+      "$playerId": {
+        ".validate": "newData.hasChildren(['id', 'name', 'role', 'jerseyNumber'])"
+      }
+    },
+    "innings": {
+      ".read": true,
+      ".write": true,
+      "$inningsId": {
+        ".validate": "newData.hasChildren(['id', 'matchId', 'teamId', 'inningsNumber'])"
+      }
+    },
+    "balls": {
+      ".read": true,
+      ".write": true,
+      "$ballId": {
+        ".validate": "newData.hasChildren(['id', 'over', 'ballNumber', 'striker', 'bowler'])"
+      }
+    }
+  }
+}
